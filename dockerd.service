@@ -1,0 +1,15 @@
+[Unit]
+Description=Docker Application Container Server
+Requires=network.target
+After=network.target
+
+
+[Service]
+Type=simple
+ExecStartPre=/bin/mount --make-rprivate /
+ExecStart=/bin/docker -d 
+PIDFile=/var/run/docker.pid
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
