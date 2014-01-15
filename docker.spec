@@ -44,7 +44,7 @@ Docker Application Container
 HERE=`pwd`
 export GOPATH=$HERE/opt/docker
 mkdir -p $GOPATH/src/github.com/dotcloud
-mv docker $GOPATH/src/github.com/dotcloud
+mv docker-%{version} $GOPATH/src/github.com/dotcloud/docker
 cd $GOPATH/src/github.com/dotcloud/docker
 
 export GOPATH=$HERE/opt/docker:$HERE/opt/docker/src/github.com/dotcloud/docker/vendor
